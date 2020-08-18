@@ -1,0 +1,23 @@
+{
+  "name": "videodownloader",
+  "version": "1.0.0",
+  "description": "downloader",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/debanshu45/videodownloader.git"
+  },
+  "author": "deb,praveen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/debanshu45/videodownloader/issues"
+  },
+  "homepage": "https://github.com/debanshu45/videodownloader#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
