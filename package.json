@@ -18,6 +18,7 @@
   "homepage": "https://github.com/debanshu45/videodownloader#readme",
   "dependencies": {
     "ejs": "^3.1.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "video-url-link": "^0.1.4"
   }
 }
