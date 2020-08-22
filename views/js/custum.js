@@ -44,3 +44,12 @@ btn.on("click", function (e) {
 $('.close').on('click',function(){
   $(this).parent('.alert').removeClass('show');
 })
+
+// $('.download-btn').on('click',function(event){
+//   event.preventDefault();
+//   downloadButtonClicked();
+// })
+// function downloadButtonClicked() {
+//   var url = $('.download-btn').attr('href') 
+//   window.location.href = url;  
+// }  

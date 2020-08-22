@@ -15,7 +15,7 @@ app.post('/download',(req,res) => {
         console.error(error);
     } else {
         console.log(info);
-        res.render('display',{info});
+        res.download('display',{info});
         res.end();
     }
 });
