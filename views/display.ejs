@@ -104,20 +104,33 @@
         </div>
         <div class="downloadSection">
           <div class="container">
-              <% info.list.forEach((el)=>{ %>
-                <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <img src="<%= el.image  %> ">
-                     <div>
-                      <span class="title" style="margin-bottom: 13px;">King Swuice - Drippin’ (Official Music Video)</span>
-                       <span class="title" >Duration: </span> 00:02:32
-                      </div>                
-                  </div>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <a id="download" href="<%= el.image %> " class="download-btn"><i class="fa fa-download" aria-hidden="true"></i>Dowbload</a>
-                  </div>
-              </div>
-             <% })  %> 
+            <% switch (platform) {
+              case 'instagram':  %>
+                    <% info.list.forEach((el)=>{ %>
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 thumbnail-video">
+              <img src="<%= el.image  %> ">
+              <div>
+                <span class="title" style="margin-bottom: 13px;"></span>
+                <span class="title" > </span>
+                </div>                
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <a target="_self" href="<%= el.video %> " download="<%= el.video %> " class="download-btn"><i class="fa fa-download" aria-hidden="true"></i>Download</a>
+            </div>
+        </div>
+        <% })  %> 
+                      <% break;
+              
+              case 'facebook' : %>
+                      <h1>Notfound</h1>
+                      <% break;
+              
+              case 'twitter' : %>
+              <h1>Notfound</h1>
+                      <% break;
+              
+              } %>
           </div>
         </div>
       </div>
@@ -165,3 +178,7 @@
     <script src="./js/custum.js"></script>
   </body>
 </html>
+
+<!-- <% if (platform == "instagram") { %>
+  
+<% } %> -->

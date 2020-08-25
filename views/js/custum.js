@@ -45,28 +45,11 @@ $('.close').on('click',function(){
   $(this).parent('.alert').removeClass('show');
 })
 
-//sending url
-
-const downloadBtn = document.getElementById('download');
-const link = downloadBtn.getAttribute('href');
-
-downloadBtn.addEventListener('click', function(event){
-  event.preventDefault();
-  function onStartedDownload(id) {
-    console.log(`Started downloading: ${id}`);
-  }
-  
-  function onFailed(error) {
-    console.log(`Download failed: ${error}`);
-  }
-  
-  var downloadUrl = link;
-  
-  var downloading = browser.downloads.download({
-    url : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-XqN-d4_cr_dkCHGIbdvPVx5EksOYdDTthg&usqp=CAU",
-    filename : 'my-image-again.png',
-    conflictAction : 'uniquify'
-  });
-  
-  downloading.then(onStartedDownload, onFailed);
-  });
+// $('.download-btn').on('click',function(event){
+//   event.preventDefault();
+//   downloadButtonClicked();
+// })
+// function downloadButtonClicked() {
+//   var url = $('.download-btn').attr('href') 
+//   window.location.href = url;  
+// }  

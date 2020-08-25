@@ -10,14 +10,44 @@ const urlDownloader = require('url-downloader');
 
 app.get('/',(req,res) => {
     res.render('index');
+    
 })
-app.post('/download',(req,res) => {
+app.get('/facebook',(req,res) => {
+    res.render('form',{ id:"fbdownload" });
+});
+app.get('/instagram',(req,res) => {
+    res.render('form',{id:"instadownload"});
+})
+app.get('/youtube',(req,res) => {
+    res.render('form',{ id:"youtubedownload" });
+})
+
+app.post('/instadownload',(req,res) => {
     videoUrlLink.instagram.getInfo(req.body.url, (error, info) => {
     if (error) {
         console.error(error);
     } else {
-        res.render('display',{info});
+        res.render('display',{info,platform:"instagram"});;
         res.end();
+    }
+});
+})
+app.post('/fbdownload',(req,res) => {
+    videoUrlLink.twitter.getInfo(req.body.url, (error, info) => {
+        if (error) {
+            console.error(error);
+        } else {
+            console.log(info);
+            res.render('display',{platform:"twitter",video:info.variants[0].url,heading:info.full_text});
+        }
+    });
+})
+app.post('/youtubedownload',(req,res)=>{
+    videoUrlLink.youtube.getInfo(req.body.url, { hl: 'en' }, (error, info) => {
+    if (error) {
+        console.error(error);
+    } else {
+        console.log(info);
     }
 });
 })
